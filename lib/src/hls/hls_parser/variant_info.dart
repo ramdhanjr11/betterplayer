@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 class VariantInfo {
   VariantInfo({
     this.bitrate,
@@ -27,20 +25,4 @@ class VariantInfo {
   /// The CLOSED-CAPTIONS value as defined in the EXT-X-STREAM-INF tag, or null if the
   /// CLOSED-CAPTIONS attribute is not present.
   final String? captionGroupId;
-
-  @override
-  bool operator ==(dynamic other) {
-    if (other is VariantInfo) {
-      return other.bitrate == bitrate &&
-          other.videoGroupId == videoGroupId &&
-          other.audioGroupId == audioGroupId &&
-          other.subtitleGroupId == subtitleGroupId &&
-          other.captionGroupId == captionGroupId;
-    }
-    return false;
-  }
-
-  @override
-  int get hashCode => hashValues(
-      bitrate, videoGroupId, audioGroupId, subtitleGroupId, captionGroupId);
 }
